@@ -1,0 +1,476 @@
+/* styles.css */
+
+/* === RESET BÁSICO === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #fffbfb;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === CONTENEDOR GENERAL === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* === NAVBAR === */
+.site-header {
+   background: url('/images/cobra-min.jpg') no-repeat center/cover;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffcc00;
+}
+
+/* BOTÓN MOBILE (se muestra solo en pantallas pequeñas) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === HERO BANNER === */
+.hero {
+  background: url('/images/kate-min.jpg') no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #630699;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #797676;
+}
+
+/* === SECCIÓN DE PRODUCTOS === */
+.products-section {
+  padding: 4rem 0;
+  background: url('/images/13-min.jpg') no-repeat center/cover;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f9f9fa;
+}
+
+.products-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* TARJETA DE PRODUCTO */
+.product-card {
+  background-color: #22222285;
+  border: 1px solid #ecd4f5c7;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(129, 129, 129, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-link {
+  font-size: 1.25rem;
+  color: #f3ecec;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  color: #f3ecec;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  flex: 1;
+  margin-bottom: 1rem;
+  color: #fffefe;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: #9d65dd;
+}
+
+.buy-button {
+  padding: 0.7rem;
+  background-color: #66666665;
+  color: #fafafa;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Al poner el cursor sobre el botón */
+.buy-button:hover {
+  background-color: #555555; /* color deseado en hover */
+}
+
+
+
+/* === SECCIÓN ACERCA DE === */
+.about-section {
+  padding: 4rem 0;
+  background: url('/images/12-min.jpg') no-repeat center/cover;
+}
+
+.about-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #fff6f6;
+}
+
+/* === SECCIÓN CONTACTO === */
+.contact-section {
+  padding: 4rem 0;
+ background:#000000;
+}
+
+.contact-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #afc1fa;
+}
+
+.contact-text a {
+  color: #f7f9ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+ 
+.contact-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   BANDA TRANSPORTADORA / TICKER
+   =============================== */
+
+.footer-ad-banner {
+  width: 100%;
+  background-color: #222;      /* Fondo oscuro para la banda */
+  overflow: hidden;
+  position: relative;
+  height: 40px;                /* Ajusta la altura según convenga */
+  display: flex;
+  align-items: center;
+}
+
+.footer-ad-banner .ad-content {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+}
+
+.footer-ad-banner .ad-content span {
+  font-size: 0.8rem;
+  color: #fff;
+  padding-left: 100%;          /* Para arrancar fuera de vista derecha */
+}
+
+/* Animación: de 100% (fuera derecha) a -100% (fuera izquierda) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ===============================
+   ESTILOS PARA EL FOOTER COMPLETO
+   =============================== */
+
+.site-footer {
+  background-color: #111;          /* Fondo oscuro */
+  color: #ccc;                     /* Texto gris claro */
+  padding: 40px 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Contenedor general del footer */
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contenido dividido en secciones */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+/* Cada sección ocupa un ancho máximo, y cede espacio en pantallas grandes */
+.footer-section {
+  flex: 1 1 220px; /* Crece, encoge, ancho base 220px */
+  min-width: 220px;
+}
+
+/* Títulos de sección */
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Texto de párrafos y enlaces dentro de cada sección */
+.footer-text {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Lista de enlaces rápidos */
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section.links ul li {
+  margin-bottom: 10px;
+}
+
+/* Formulario de newsletter */
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.newsletter-form button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #e65500;
+}
+
+/* Línea separadora */
+.footer-separator {
+  height: 1px;
+  background-color: #333;
+  margin: 0 -0.5rem;
+}
+
+/* Base del footer (copyright + redes) */
+.footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Íconos sociales */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Iconos claros */
+  transition: filter 0.2s ease;
+}
+
+.social-icons a:hover img {
+  filter: brightness(0) invert(0.8);
+}
+
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  /* Por defecto, ocultamos el nav en móvil */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #070607b7;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  /* Cuando la clase open está presente, mostramos el nav */
+  .nav.open {
+    display: flex; /* o block, según prefieras un layout vertical */
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+   .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+    .footer-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .footer-base {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+}

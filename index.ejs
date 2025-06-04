@@ -1,0 +1,121 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda Digital</title>
+  <!-- Vincula el CSS desde /css/styles.css -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <!-- SDK de Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="logo">YD</a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="#products" class="nav-link">Productos</a>
+        <a href="#about" class="nav-link">Acerca de</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+      </nav>
+      <button id="menu-toggle" class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL -->
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="container">
+        <h1>Bienvenido a Tu Tienda de Productos Digitales</h1>
+        <p>Encuentra ebooks, plantillas y más, ¡con entrega instantánea tras tu compra!</p>
+        <a href="#products" class="btn-primary">Ver Productos</a>
+      </div>
+    </section>
+
+    <!-- LISTA DE PRODUCTOS -->
+    <section id="products" class="products-section">
+      <div class="container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="products-grid">
+          <% products.forEach(function(product) { %>
+            <div class="product-card"
+                 data-id="<%= product.id %>"
+                 data-name="<%= product.name %>"
+                 data-amount="<%= product.price %>"
+                 data-currency="<%= product.currency %>">
+              <!-- Enlace a la página de detalle -->
+              <a href="/product/<%= product.id %>">
+                <img src="<%= product.image %>" alt="<%= product.name %>" />
+              </a>
+              <div class="product-content">
+                <h3 class="product-title">
+                  <a href="/product/<%= product.id %>" class="product-link">
+                    <%= product.name %>
+                  </a>
+                </h3>
+                <p class="product-desc"><%= product.description %></p>
+                <span class="product-price">
+                  $<%= (product.price / 100).toFixed(2) %> <%= product.currency.toUpperCase() %>
+                </span>
+                <button class="buy-button">
+                  Comprar ($<%= (product.price / 100).toFixed(2) %>)
+                </button>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ACERCA DE -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+        <p class="about-text">
+          En TiendaDigital nos enfocamos en ofrecer productos de alta calidad, diseñados para ayudarte a ahorrar tiempo y potenciar tus proyectos. 
+          Todos nuestros recursos se entregan de forma instantánea y segura mediante Stripe Checkout. 
+          <br /><br />
+          Trabajamos constantemente en nuevos materiales para que siempre encuentres algo útil para tus necesidades.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="contact-text">
+          ¿Tienes preguntas o necesitas soporte? Escríbenos a 
+          <a href="mailto:soporte@tiendadigital.com">soporte@tiendadigital.com</a> 
+          y te responderemos en menos de 24 horas.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p>&copy; 2025 TiendaDigital. Todos los derechos reservados.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">
+          <img src="https://via.placeholder.com/24/Facebook" alt="Facebook" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://via.placeholder.com/24/Twitter" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="https://via.placeholder.com/24/Instagram" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica de Stripe y menú móvil -->
+  <script src="/js/script.js"></script>
+</body>
+</html>

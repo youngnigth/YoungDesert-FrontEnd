@@ -1,0 +1,314 @@
+<!-- public/success.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compra Exitosa</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    /* === RESET & BASE === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: url('/images/12-min.jpg') no-repeat center/cover;
+      color: #1a202c;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* === HEADER === */
+    .site-header {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #2b6cb0;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #4a5568;
+    }
+
+    /* === MAIN CONTENT === */
+    .success-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .success-card {
+      background: #46454565;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+    }
+    .success-card .icon {
+      font-size: 3rem;
+      color: #38a169;
+      margin-bottom: 1rem;
+    }
+    .success-card h1 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .success-card p {
+      font-size: 1rem;
+      color: #9b9fa5;
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }
+    #download-area a {
+      display: block;
+      margin: 0.5rem auto;
+      max-width: 260px;
+    }
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-primary {
+      background-color: #3182ce;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+    .btn-primary:hover {
+      background-color: #2b6cb0;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background-color: #e2e8f0;
+      color: #2d3748;
+    }
+    .btn-secondary:hover {
+      background-color: #cbd5e0;
+      transform: translateY(-2px);
+    }
+
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+    @media (max-width: 600px) {
+      .success-card {
+        padding: 2rem 1rem;
+      }
+      .success-card h1 {
+        font-size: 1.75rem;
+      }
+      .success-card p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="logo">YD</a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="#products" class="nav-link">Productos</a>
+        <a href="#about" class="nav-link">Acerca de</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+      </nav>
+      <button id="menu-toggle" class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <div class="success-wrapper">
+    <div class="success-card">
+      <!-- Icon: puedes reemplazar con un SVG o <img> si prefieres -->
+      <div class="icon">✅</div>
+
+      <h1>¡Gracias por tu compra!</h1>
+      <p>
+        Tu pago se procesó correctamente. Aquí abajo encontrarás el enlace para descargar tu producto.
+      </p>
+
+      <div id="download-area">
+        <!-- El enlace de descarga se crea dinámicamente -->
+      </div>
+
+      <a href="/" class="btn-secondary">Volver al inicio</a>
+    </div>
+  </div>
+
+  <!-- FOOTER MEJORADO -->
+<footer class="site-footer">
+  <div class="container footer-container">
+    <div class="footer-content">
+      <!-- Sección Acerca de -->
+      <div class="footer-section about">
+        <h3 class="footer-title">TiendaDigital</h3>
+        <p class="footer-text">
+          En TiendaDigital nos dedicamos a ofrecer productos digitales de alta calidad para facilitar tu día a día. Descubre ebooks, plantillas y más, todo al alcance de un clic.
+        </p>
+      </div>
+
+      <!-- Sección Enlaces Rápidos -->
+      <div class="footer-section links">
+        <h3 class="footer-title">Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/acerca">Acerca de</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/preguntas-frecuentes">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Sección Contacto -->
+      <div class="footer-section contact">
+        <h3 class="footer-title">Contacto</h3>
+        <p class="footer-text">
+          <strong>Dirección:</strong> Calle Falsa 123, Santa Ana, El Salvador<br>
+          <strong>Teléfono:</strong> +503 (234) 567-8901<br>
+          <strong>Email:</strong> <a href="mailto:youngdesert01@gmail.com">soporte@tiendadigital.com</a>
+        </p>
+      </div>
+
+      <!-- Sección Newsletter -->
+      <div class="footer-section newsletter">
+        <h3 class="footer-title">Suscríbete al Newsletter</h3>
+        <p class="footer-text">Recibe ofertas y novedades directamente en tu correo.</p>
+        <form class="newsletter-form" action="#" method="POST">
+          <input
+            type="email"
+            name="email"
+            placeholder="Tu correo electrónico"
+            required
+          />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Línea separadora -->
+    <div class="footer-separator"></div>
+
+    <!-- Base del footer: derechos reservados + redes sociales -->
+    <div class="footer-base">
+      <p class="footer-copy">© 2025 YoungDesert. Todos los derechos reservados.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">
+          <img src="https://via.placeholder.com/24/Facebook" alt="Facebook" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://via.placeholder.com/24/Twitter" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="https://via.placeholder.com/24/Instagram" alt="Instagram" />
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <img src="https://via.placeholder.com/24/LinkedIn" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    // 1) Obtenemos la cadena de consulta: ?product=prodX
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('product'); // ej. "prod1"
+
+    // 2) Mapa JS: productId → ruta de descarga y nombre amigable
+    const productMap = {
+      Finanzas: {
+        url: '/downloads/Finanzas.pdf',
+        name: 'Finanzas Personales'
+      },
+      prod2: {
+        url: '/downloads/prod2.pptx',
+        name: 'Plantilla: Presentación Pro'
+      },
+      prod3: {
+        url: '/downloads/prod3.zip',
+        name: 'Pack: Plantillas Excel'
+      },
+      prod4: {
+        url: '/downloads/prod4.pdf',
+        name: 'Manual Avanzado'
+      }
+      // Agrega aquí más productos si lo necesitas
+    };
+
+    const downloadArea = document.getElementById('download-area');
+
+    if (productId && productMap[productId]) {
+      const { url, name } = productMap[productId];
+
+      // 3) Creamos el enlace <a> para descargar
+      const a = document.createElement('a');
+      a.href = url;
+      a.textContent = `Descargar "${name}"`;
+      a.className = 'btn-primary';
+      a.setAttribute('download', '');
+      downloadArea.appendChild(a);
+    } else {
+      // Si no existe productId válido, mostramos un mensaje de error
+      downloadArea.innerHTML = `
+        <p style="color: #c00; font-weight: 600; margin-bottom: 1rem;">
+          Error: No se encontró el producto para descargar.
+        </p>
+        <a href="/" class="btn-secondary">Regresar a la tienda</a>
+      `;
+    }
+  </script>
+</body>
+</html>
