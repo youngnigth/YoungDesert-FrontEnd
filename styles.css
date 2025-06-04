@@ -31,7 +31,7 @@ body {
 
 /* === NAVBAR === */
 .site-header {
-   background: url('/images/cobra-min.jpg') no-repeat center/cover;
+   background: url('cobra-min.jpg') no-repeat center/cover;
   color: #fff;
   position: sticky;
   top: 0;
@@ -80,7 +80,7 @@ body {
 
 /* === HERO BANNER === */
 .hero {
-  background: url('/images/kate-min.jpg') no-repeat center/cover;
+  background: url('kate-min.jpg') no-repeat center/cover;
   color: #fff;
   text-align: center;
   padding: 6rem 0;
@@ -130,7 +130,7 @@ body {
 /* === SECCIÓN DE PRODUCTOS === */
 .products-section {
   padding: 4rem 0;
-  background: url('/images/13-min.jpg') no-repeat center/cover;
+  background: url('13-min.jpg') no-repeat center/cover;
 }
 
 .section-title {
@@ -225,7 +225,7 @@ body {
 /* === SECCIÓN ACERCA DE === */
 .about-section {
   padding: 4rem 0;
-  background: url('/images/12-min.jpg') no-repeat center/cover;
+  background: url('12-min.jpg') no-repeat center/cover;
 }
 
 .about-text {
