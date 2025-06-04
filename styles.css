@@ -31,7 +31,7 @@ body {
 
 /* === NAVBAR === */
 .site-header {
-   background: url('cobra-min.jpg') no-repeat center/cover;
+   background: url('#cobra-min.jpg') no-repeat center/cover;
   color: #fff;
   position: sticky;
   top: 0;
